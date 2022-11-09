@@ -20,7 +20,6 @@ const solarSystem = [
 async function scrapeStar(star) {
   const { starName, xPath } = star;
   const browser = await puppeteer.launch();
-  // const browser = await puppeteer.launch({ headless: false, slowMo: 200, devtools: true });
   const page = await browser.newPage();
   await page.goto(`https://theskylive.com/how-far-is-${starName}`);
   console.log('starName :>> ', starName);

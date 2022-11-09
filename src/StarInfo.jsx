@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { StarList } from './StarList';
 import { Loader } from './Loader';
-import { httpService } from './http.service';
+import { starService } from './star.service';
 
 export const StarInfo = () => {
   const [stars, setStars] = useState([]);
 
   const fetchData = async () => {
     try {
-      const data = await httpService.get('star-info');
+      const data = await starService.query();
       console.log('data :>> ', data);
       setStars(data);
     } catch (error) {

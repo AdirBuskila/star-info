@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const starScrapper = require('./src/api/star.scrape');
+const starRoutes = require('./api/star.routes');
 const cors = require('cors');
 
 const app = express();
@@ -23,12 +23,13 @@ app.get('/cors', (req, res) => {
   res.send({ msg: 'This has CORS enabled 🎈' });
 });
 
-app.get('/api/star-info', async (req, res) => {
-  // const results = await scrapeStar({ starName: 'neptune', xPath: neptunePath });
-  const results = await starScrapper.getStarsData();
-  console.log('results in req :>> ', results);
-  res.json(results);
-});
+// app.get('/api/star-info', async (req, res) => {
+//   // const results = await scrapeStar({ starName: 'neptune', xPath: neptunePath });
+//   const results = await starScrapper.getStarsData();
+//   console.log('results in req :>> ', results);
+//   res.json(results);
+// });
+app.use('/api/star-info', starRoutes);
 
 app.use(express.static('public'));
 app.get('/**', (req, res) => {
