@@ -17,8 +17,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set NODE_ENV=production&&node server.js",
+    "start": "npm i puppeteer&&set NODE_ENV=production&&node server.js",
     "server:prod": "set NODE_ENV=production&&node server.js",
+    "server:dev": "set NODE_ENV=development&&nodemon server.js",
     "build": "react-scripts build"
   },
   "eslintConfig": {

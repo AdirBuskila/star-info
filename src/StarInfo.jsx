@@ -9,6 +9,7 @@ export const StarInfo = () => {
   const fetchData = async () => {
     try {
       const data = await httpService.get('star-info');
+      console.log('data :>> ', data);
       setStars(data);
     } catch (error) {
       console.log(error);
