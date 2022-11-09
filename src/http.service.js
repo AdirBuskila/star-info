@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/api/' : 'http://localhost:4000/api/star-info';
+const BASE_URL = process.env.NODE_ENV === 'production' ? '/api/' : 'http://localhost:3333/api/';
 
 var axios = Axios.create({
   withCredentials: true,

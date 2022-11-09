@@ -8,8 +8,7 @@ export const StarInfo = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('api/star-info');
-      const data = await response.json();
+      const data = await httpService.get('star-info');
       setStars(data);
     } catch (error) {
       console.log(error);
